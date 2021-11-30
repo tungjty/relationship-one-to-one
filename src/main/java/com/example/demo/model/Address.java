@@ -17,13 +17,16 @@ public class Address {
 
     @Id
     @Column(name = "address_id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-//            generator = "address_sequence"
-//    )
-//    @SequenceGenerator(name = "address_sequence",
-//            sequenceName = "address_id_seq"
-//    )
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "address_sequence"
+    )
+    @SequenceGenerator(
+            name = "address_sequence",
+            sequenceName = "address_id_seq",
+            allocationSize = 1
+    )
     private Long addressId;
 
     private String address;
