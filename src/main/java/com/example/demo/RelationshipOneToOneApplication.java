@@ -35,10 +35,13 @@ public class RelationshipOneToOneApplication {
 			List<Office> list = List.of(acom, vinfast, apple);
 			officeRepository.saveAll(list);
 
+			// SAVE OFFICE ONLY
+			Office onlyOffice = new Office("office without address", "TL-010305", null);
+			officeRepository.save(onlyOffice);
+
 			// SAVE ADDRESS ONLY
 			Address samsungAddress = new Address("Bitexco Tower, 02 Hai Trieu District 1, VN");
 			addressRepository.save(samsungAddress);
 		};
 	}
-
 }

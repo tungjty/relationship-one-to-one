@@ -42,12 +42,14 @@ public class Office {
 
     @OneToOne(
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            fetch = FetchType.EAGER // default 'EAGER'
+            fetch = FetchType.EAGER, // default 'EAGER'
+            optional = true // DEFAULT, NOT REQUIRE INSERT ADDRESS WHEN INSERT OFFICE
+//            optional = false // REQUIRE INSERT ADDRESS WHEN INSERT OFFICE
     )
     @JoinColumn(
             name = "address_id", // NAME OF REFERENCE COLUMN
-            referencedColumnName = "address_id",
-            foreignKey = @ForeignKey(name = "office_address_fk")
+            referencedColumnName = "addressId",
+            foreignKey = @ForeignKey(name = "address_address_id_fk")
     )
     private Address address;
 

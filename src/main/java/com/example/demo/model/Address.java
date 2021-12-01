@@ -16,7 +16,6 @@ import javax.persistence.*;
 public class Address {
 
     @Id
-    @Column(name = "address_id", nullable = false)
 //    @GeneratedValue(strategy = GenerationType.AUTO)
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
