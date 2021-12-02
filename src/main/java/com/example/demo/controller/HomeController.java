@@ -28,6 +28,13 @@ public class HomeController {
         return officeService.getOffices();
     }
 
+    // TODO : REMOVE ADDRESS -> REMOVE OFFICE DUE TO 'CascadeType.REMOVE' IN ADDRESS ENTITY
+    @GetMapping(path = "office/orphanremoval")
+    public String removeOrphanAddressFromOffice(@RequestParam("ofOfficeId") Long ofOfficeId) {
+        officeService.removeOrphanAddressFromOffice(ofOfficeId);
+        return "ORPHAN ADDRESS WAS REMOVED FROM OFFICE SUCCESSFULLY";
+    }
+
     @DeleteMapping(path = "office/delete/{id}")
     public String deleteOfficeById(@PathVariable("id") Long id) {
         officeService.deleteOfficeById(id);

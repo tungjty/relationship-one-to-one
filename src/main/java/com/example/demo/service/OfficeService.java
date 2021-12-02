@@ -10,4 +10,5 @@ public interface OfficeService {
 
     void deleteOfficeById(Long id);
 
+    void removeOrphanAddressFromOffice(Long ofOfficeId);
 }

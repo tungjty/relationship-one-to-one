@@ -40,8 +40,8 @@ public class RelationshipOneToOneApplication {
 			officeRepository.save(onlyOffice);
 
 			// SAVE ADDRESS ONLY
-			Address samsungAddress = new Address("Bitexco Tower, 02 Hai Trieu District 1, VN");
-			addressRepository.save(samsungAddress);
+			Address onlyAddress = new Address("Address without office");
+			addressRepository.save(onlyAddress);
 		};
 	}
 }

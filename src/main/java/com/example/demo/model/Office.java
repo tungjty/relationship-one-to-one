@@ -26,7 +26,7 @@ public class Office {
     @SequenceGenerator(
             name = "office_sequence",
             sequenceName = "office_id_seq", // override name of generated table
-            initialValue = 100,
+            initialValue = 10,
             allocationSize = 1
     )
     private Long officeId;
@@ -41,6 +41,7 @@ public class Office {
 
     @OneToOne(
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            orphanRemoval = true,
             fetch = FetchType.EAGER, // default 'EAGER'
             optional = true // DEFAULT, NOT REQUIRE INSERT ADDRESS WHEN INSERT OFFICE
 //            optional = false // REQUIRE INSERT ADDRESS WHEN INSERT OFFICE
