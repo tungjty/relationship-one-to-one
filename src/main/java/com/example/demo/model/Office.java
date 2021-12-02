@@ -19,7 +19,6 @@ import javax.persistence.*;
 public class Office {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "office_sequence" // name of generated table
